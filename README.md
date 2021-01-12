@@ -70,6 +70,9 @@ junit4Runner.run();
 ## 🚩 Changelog
 Details about each version are documented in the [releases section](https://github.com/williamniemiec/junit4-api/releases).
 
+## 🤝 Contribute
+See the documentation on how you can contribute to the project [here](https://github.com/williamniemiec/junit4-api/blob/master/CONTRIBUTING.md).
+
 ## 📁 Files
 ### /
 |        Name 	|Type|Description|
