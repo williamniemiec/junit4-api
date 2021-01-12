@@ -1,7 +1,7 @@
 
 # JUnit 4 API -  Contributing Guide
 
-- [Problems](#issues)
+- [Issues](#issues)
 - [Pull Request - Guide](#pull-request-guide)
 - [Setting up development environment](#development-setup)
 - [Code style guide](#code-style)
@@ -11,7 +11,7 @@
 - [Creating tags](#new-tag)
 
 
-## <a name="issues"></a> Problemas
+## <a name="issues"></a> Issues
 
 - If there is a problem or question while editing the project, create an [issue](https://github.com/williamniemiec/junit4-api/pulls) detailing the problem or question.
 
@@ -100,6 +100,7 @@ Classes should use the following pattern:
  * @since		A.B.C
  */
 </pre>
+
 Where X, Y and Z are numbers relative to the version of the application in which the class was last modified and A, B and C identify the version of the application in which the class was created. The annotation is separated from the content with 2 tabs.  In addition, internally, the class should be divided into sections, which are identified with the following pattern:
 
 <pre>
@@ -126,7 +127,7 @@ Where [section_name] can be:
 ### <a name="doc-standard-methods"></a> Methods
 Public methods must be documented using javadoc.
 
-<b>Attention: </b> Documentations using javadoc must have the tag name followed by two tabs followed by its value, with the exception of the `@ implSpec`,` @ apiNote` and `@ implNote` tags, which contain only one tab. This is done in order to maintain uniform presentation of documentation
+<b>Attention: </b> Documentations using javadoc must have the tag name followed by two tabs followed by its value, with the exception of the `@implSpec`,` @apiNote` and `@implNote` tags, which contain only one tab. This is done in order to maintain uniform presentation of documentation
 
 ## <a name="jar-generation"></a>Jar generation
 To generate jar file, do the following:
@@ -145,45 +146,46 @@ Where:
 * X, Y, Z: Application version
 
 ![step3](https://github.com/williamniemiec/junit4-api/blob/master/docs/img/how-to-generate-jar/step3.png)
+
+
 ## Appendix
 
 ### <a name="new-branch"></a> Creating branches
 Create a new branch:
 
-<code>
-	git checkout -b nome-branch
-</code>
+<pre>
+git checkout -b nome-branch
+</pre>
 
 Add to the remote repository:
 
-<code>
-	git push -u origin nome-branch
-</code>
+<pre>
+git push -u origin nome-branch
+</pre>
 
 #### Example
-<code>
-
-	git checkout -b v1.x
-	git push -u origin v1.x
-</code>
+<pre>
+git checkout -b v1.x
+git push -u origin v1.x
+</pre>
 
 See more [here](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging).
 
 ### <a name="new-tag"></a> Creating tags
-<code>
-	git tag -a nome-tag -m descricao
-</code>
+<pre>
+git tag -a nome-tag -m descricao
+</pre>
 
 Add to the remote repository:
 
-<code>
-	git push -u origin nome-tag
-</code>
+<pre>
+git push -u origin nome-tag
+</pre>
 
 #### Example
-<code>
-	git tag -a v1.0.1 -m "Performance improvement"
-	git push -u origin v1.0.1
-</code>
+<pre>
+git tag -a v1.0.1 -m "Performance improvement"
+git push -u origin v1.0.1
+</pre>
 
 See more [here](https://git-scm.com/book/en/v2/Git-Basics-Tagging).
