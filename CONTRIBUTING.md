@@ -13,7 +13,7 @@
 
 ## <a name="issues"></a> Problemas
 
-- Se ocorrer algum problema ou dúvida durante a edição do projeto, crie uma [issue](https://github.com/williamniemiec/junit4-api/pulls) detalhando o problema / dúvida.
+- If there is a problem or question while editing the project, create an [issue](https://github.com/williamniemiec/junit4-api/pulls) detailing the problem or question.
 
 
 ## <a name="pull-request-guide"></a> Pull Request - Guide
