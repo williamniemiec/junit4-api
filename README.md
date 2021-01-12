@@ -33,10 +33,10 @@ junit4Runner.run();
 
 #### Eclipse IDE
 1) With your project opened, add [`junit4-api.jar`](https://github.com/williamniemiec/junit4-api/releases/) into project build path.
-![step1](https://raw.githubusercontent.com/williamniemiec/junit4-api/master/docs/img/logo/how-to-use/step1.png?raw=true)
-![step2](https://raw.githubusercontent.com/williamniemiec/junit4-api/master/docs/img/logo/how-to-use/step2.png?raw=true)
-![step3](https://raw.githubusercontent.com/williamniemiec/junit4-api/master/docs/img/logo/how-to-use/step3.png?raw=true)
-![step4](https://raw.githubusercontent.com/williamniemiec/junit4-api/master/docs/img/logo/how-to-use/step4.png?raw=true)
+![step1](https://raw.githubusercontent.com/williamniemiec/junit4-api/master/docs/img/how-to-use/step1.png?raw=true)
+![step2](https://raw.githubusercontent.com/williamniemiec/junit4-api/master/docs/img/how-to-use/step2.png?raw=true)
+![step3](https://raw.githubusercontent.com/williamniemiec/junit4-api/master/docs/img/how-to-use/step3.png?raw=true)
+![step4](https://raw.githubusercontent.com/williamniemiec/junit4-api/master/docs/img/how-to-use/step4.png?raw=true)
 
 2) Create variables with required information (working directory, classpaths and class signature)
 <pre>
