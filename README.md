@@ -46,7 +46,7 @@ Path workingDirectory = Path.of(".", "bin").toAbsolutePath().normalize();
 Path stringUtilsClassPath = workingDirectory.resolve(
 		Path.of("api", "util", "StringUtilsTest.class")
 );
-List<Path> classpaths = List.of(
+List&lt;Path> classpaths = List.of(
 		workingDirectory.resolve(stringUtilsClassPath)
 );
 </pre>
