@@ -15,6 +15,7 @@ import api.util.StringUtils;
  * Responsible for executing JUnit 4 tests.
  * 
  * @author		William Niemiec &lt; williamniemiec@hotmail.com &gt;
+ * @see			https://github.com/williamniemiec/junit4-api
  */
 public class JUnit4Runner {
 	
@@ -153,7 +154,7 @@ public class JUnit4Runner {
 			try {
 				argumentFile = ArgumentFile.createArgumentFile(
 						Path.of(System.getProperty("java.io.tmpdir")), 
-						"argfile.txt", 
+						"argfile-junit4.txt", 
 						classPath
 				);
 			} 
