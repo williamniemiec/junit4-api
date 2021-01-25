@@ -39,13 +39,14 @@ junit4Runner.run();
 ![step4](https://raw.githubusercontent.com/williamniemiec/junit4-api/master/docs/img/how-to-use/step4.png?raw=true)
 
 2) Create variables with required information (working directory, classpaths and class signature)
+
+#### Example
 <pre>
-// Example
 Path workingDirectory = Path.of(".", "bin").toAbsolutePath().normalize();
 Path stringUtilsClassPath = workingDirectory.resolve(
 		Path.of("api", "util", "StringUtilsTest.class")
 );
-List<Path> classpaths = List.of(
+List&lt;Path> classpaths = List.of(
 		workingDirectory.resolve(stringUtilsClassPath)
 );
 </pre>

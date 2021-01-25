@@ -30,12 +30,9 @@
 - Only create the tag at the end of your changes 
 - only one tag per pull request must be created  
 - Choose a different tag from the current tag. If the current tag is X.Y.Z, where X, Y and Z are numbers, [create a new tag](#new-tag) using the following criteria:  
-<ul>
-	<li> If the changes made are minor, that is, small modifications that do not change the way of using a feature or even for bug fixes, create the tag `X.Y.(Z + 1)` (without parentheses) </li> 
-	<li> If new features are added, create the `X.(Y + 1).0` tag (without parentheses)</li>
-	<li> If the way of using one or more features is changed, or even if a feature is deleted, create a new branch with the name `(X + 1).x` and create a new tag with the name `(X + 1).0.0` (without parentheses) 
-	 </li>  
- </ul>
+  - If the changes made are minor, that is, small modifications that do not change the way of using a feature or even for bug fixes, create the tag `X.Y.(Z + 1)` (without parentheses) 
+  - If new features are added, create the `X.(Y + 1).0` tag (without parentheses)
+  - If the way of using one or more features is changed, or even if a feature is deleted, create a new branch with the name `(X + 1).x` and create a new tag with the name `(X + 1).0.0` (without parentheses) 
  
 <b>Attention:</b> Tag creation should be `Annotated Tags` type.
 
@@ -127,25 +124,25 @@ Where [section_name] can be:
 ### <a name="doc-standard-methods"></a> Methods
 Public methods must be documented using javadoc.
 
-<b>Attention: </b> Documentations using javadoc must have the tag name followed by two tabs followed by its value, with the exception of the `@implSpec`,` @apiNote` and `@implNote` tags, which contain only one tab. This is done in order to maintain uniform presentation of documentation
+<b>Attention: </b> Documentations using javadoc must have the tag name followed by two tabs followed by its value, with the exception of the `@implSpec`, `@apiNote` and `@implNote` tags, which contain only one tab. This is done in order to maintain uniform presentation of documentation
 
 ## <a name="jar-generation"></a>Jar generation
 To generate jar file, do the following:
 
 1) Export the project
 
-![step1](https://github.com/williamniemiec/junit4-api/blob/master/docs/img/how-to-generate-jar/step1.png)
+![step1](https://github.com/williamniemiec/junit4-api/blob/master/docs/img/how-to-generate-jar/step1.png?raw=true)
 
 2) Select `Java` -> `JAR file`.
 
-![step2](https://github.com/williamniemiec/junit4-api/blob/master/docs/img/how-to-generate-jar/step2.png)
+![step2](https://github.com/williamniemiec/junit4-api/blob/master/docs/img/how-to-generate-jar/step2.png?raw=true)
 
 3) Save the jar in `dist/X.Y/<FILENAME>`, where X and Y are the current version numbers and \<FILENAME\> is defined as follows:
 `junit4-api_vX.Y.Z.jar`
 Where:  
 * X, Y, Z: Application version
 
-![step3](https://github.com/williamniemiec/junit4-api/blob/master/docs/img/how-to-generate-jar/step3.png)
+![step3](https://github.com/williamniemiec/junit4-api/blob/master/docs/img/how-to-generate-jar/step3.png?raw=true)
 
 
 ## Appendix
@@ -154,13 +151,13 @@ Where:
 Create a new branch:
 
 <pre>
-git checkout -b nome-branch
+git checkout -b branch_name
 </pre>
 
 Add to the remote repository:
 
 <pre>
-git push -u origin nome-branch
+git push -u origin branch_name
 </pre>
 
 #### Example
@@ -173,13 +170,13 @@ See more [here](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and
 
 ### <a name="new-tag"></a> Creating tags
 <pre>
-git tag -a nome-tag -m descricao
+git tag -a tag_name -m description
 </pre>
 
 Add to the remote repository:
 
 <pre>
-git push -u origin nome-tag
+git push -u origin tag_name
 </pre>
 
 #### Example
