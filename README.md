@@ -1,4 +1,3 @@
-
 ![](https://raw.githubusercontent.com/williamniemiec/junit4-api/master/docs/img/logo/logo.jpg?raw=true)
 
 <h1 align='center'>JUnit 4 API</h1>
@@ -82,4 +81,3 @@ See the documentation on how you can contribute to the project [here](https://gi
 |docs |`Directory`|Documentation files|
 |lib   |`Directory`|Libraries the project uses   |
 |src     |`Directory`| Source files |
-|tests|`Directory`|Tests of the source files|

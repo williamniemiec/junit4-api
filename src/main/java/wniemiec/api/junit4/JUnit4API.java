@@ -1,4 +1,4 @@
-package api.junit4;
+package wniemiec.api.junit4;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import api.util.ArgumentFile;
-import api.util.StringUtils;
+import wniemiec.util.io.path.ArgumentFile;
+import wniemiec.util.data.StringUtils;
 
 /**
  * Responsible for executing JUnit 4 tests.
@@ -17,7 +17,7 @@ import api.util.StringUtils;
  * @author		William Niemiec &lt; williamniemiec@hotmail.com &gt;
  * @see			https://github.com/williamniemiec/junit4-api
  */
-public class JUnit4Runner {
+public class JUnit4API {
 	
 	//-------------------------------------------------------------------------
 	//		Attributes
@@ -35,7 +35,7 @@ public class JUnit4Runner {
 	//-------------------------------------------------------------------------
 	//		Constructor
 	//-------------------------------------------------------------------------
-	private JUnit4Runner(Path workingDirectory, String classPath, 
+	private JUnit4API(Path workingDirectory, String classPath, 
 						 String classSignature, boolean displayVersion) {
 		this.displayVersion = displayVersion;
 
@@ -92,7 +92,7 @@ public class JUnit4Runner {
 		}
 		
 		/**
-		 * Creates {@link JUnit4Runner} with provided information. It is 
+		 * Creates {@link JUnit4API} with provided information. It is 
 		 * necessary to provide all required fields. The required fields 
 		 * are: <br />
 		 * <ul>
@@ -100,18 +100,18 @@ public class JUnit4Runner {
 		 * 	<li>Class signature</li>
 		 * </ul>
 		 * 
-		 * @return		JUnit4Runner with provided information
+		 * @return		JUnit4API with provided information
 		 * 
 		 * @throws		IllegalArgumentException If any required field is null
 		 */
-		public JUnit4Runner build() {
+		public JUnit4API build() {
 			checkRequiredFields();
 			includeJUnitCore();
 			includeJavaClasspath();
 			createArgumentFileFromClassPath();	// Avoids 'CreateProcess error=206'
 			
 			if (argumentFile == null) {
-				return new JUnit4Runner(
+				return new JUnit4API(
 						workingDirectory, 
 						StringUtils.implode(relativizeClassPaths(), ";"),
 						classSignature,
@@ -119,7 +119,7 @@ public class JUnit4Runner {
 				);
 			}
 			else {
-				return new JUnit4Runner(
+				return new JUnit4API(
 						workingDirectory, 
 						"@" + argumentFile, 
 						classSignature,
@@ -151,12 +151,13 @@ public class JUnit4Runner {
 		}
 		
 		private void createArgumentFileFromClassPath() {
+			ArgumentFile argFile = new ArgumentFile(
+				Path.of(System.getProperty("java.io.tmpdir")),
+				"argfile-junit4"
+			);
+
 			try {
-				argumentFile = ArgumentFile.createArgumentFile(
-						Path.of(System.getProperty("java.io.tmpdir")), 
-						"argfile-junit4.txt", 
-						classPath
-				);
+				argumentFile = argFile.create(classPath);
 			} 
 			catch (IOException e) {
 				argumentFile = null;

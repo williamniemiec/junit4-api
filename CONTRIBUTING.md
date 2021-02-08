@@ -1,4 +1,3 @@
-
 # JUnit 4 API -  Contributing Guide
 
 - [Issues](#issues)
@@ -138,7 +137,7 @@ To generate jar file, do the following:
 ![step2](https://github.com/williamniemiec/junit4-api/blob/master/docs/img/how-to-generate-jar/step2.png?raw=true)
 
 3) Save the jar in `dist/X.Y/<FILENAME>`, where X and Y are the current version numbers and \<FILENAME\> is defined as follows:
-`junit4-api_vX.Y.Z.jar`
+`junit4-X.Y.Z.jar`
 Where:  
 * X, Y, Z: Application version
 
