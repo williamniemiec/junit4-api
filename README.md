@@ -69,35 +69,74 @@ junit4Runner.run();
 
 ## 🔌 Installation
 #### Maven
-Add to your `pom.xml` before `<build>` tag:
-```
-<repositories>
+1. Add to your `pom.xml` before `<build>` tag, replacing `RELEASE_VERSION` with the desired version:
+	```
+	<dependency>
+		<groupId>wniemiec.api</groupId>
+		<artifactId>jdb</artifactId>
+		<version>RELEASE_VERSION</version>
+	</dependency>
+	```
+
+2. Go to `~/.m2/settings.xml` file ([see more](https://maven.apache.org/settings.html)) and add the following: 
+
+	2.1. Inside `<profiles>/<profile>/<repositories>`:
+	```
 	<repository>
-		<id>github</id>
-		<name>GitHub williamniemiec Apache Maven Packages</name>
-		<url>https://maven.pkg.github.com/williamniemiec/utils</url>
-		<releases>
-			<enabled>true</enabled>
-		</releases>
-		<snapshots>
-			<enabled>true</enabled>
-		</snapshots>
+	    <id>github-wniemiec-junit4-api</id>
+	    <name>GitHub williamniemiec Apache Maven Packages</name>
+	    <url>https://maven.pkg.github.com/williamniemiec/junit4-api</url>
 	</repository>
-</repositories>
+	```
+
+	2.2. Inside `<servers>`:
+	```
+	<server>
+	    <id>github-wniemiec-junit4-api</id>
+	    <username>williamniemiec</username>
+	    <password>PKG-KEY</password>
+	</server>
+	```
+
+##### Example:
+```
+<?xml version="1.0" encoding="UTF-8" ?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    <activeProfiles>
+        <activeProfile>github</activeProfile>
+    </activeProfiles>
+
+    <profiles>
+        <profile>
+            <id>github</id>
+            <repositories>
+                <repository>
+                    <id>github-wniemiec-junit4-api</id>
+                    <name>GitHub williamniemiec Apache Maven Packages</name>
+                    <url>https://maven.pkg.github.com/williamniemiec/junit4-api</url>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+
+    <servers>
+        <server>
+            <id>github-wniemiec-junit4-api</id>
+            <username>williamniemiec</username>
+            <password>PKG-KEY</password>
+        </server>
+    </servers>
+</settings>
 ```
 
-Also add (relative to api) replacing `RELEASE_VERSION` with the desired version :
-```
-<dependency>
-	<groupId>wniemiec.api</groupId>
-	<artifactId>jdb</artifactId>
-	<version>RELEASE_VERSION</version>
-</dependency>
-```
+3. Replace `PKG-KEY` with `7_0b160a3090c6d2be691f66b21dff138b3b687b0` **without underscore (`_`)**
 
-Finally, run the following command:
+4. Finally, run the following command:
 > mvn install
 
+**NOTE:** If `settings.xml` file does not exist, create one and use the same content as in the example above.
 
 #### Eclipse IDE
 With your project opened, add [`junit4-api.jar`](https://github.com/williamniemiec/junit4-api/releases/) into project build path.
