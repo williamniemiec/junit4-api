@@ -25,11 +25,11 @@ In order to use this API, you need to provide the following information:
 It is necessary to build JUnit 4 API. Build it as follows:
 <pre>
 JUnit4API api = new JUnit4API.Builder()
-		.workingDirectory(BASE_DIRECTORY)
-		.classPath(LIST_OF_COMPILED_FILES)
-		.classSignature(STRING_WITH_TEST_CLASS_SIGNATURE)
-		.displayVersion(true)	// Optional (default is false)
-		.build();
+	.workingDirectory(BASE_DIRECTORY)
+	.classPath(LIST_OF_COMPILED_FILES)
+	.classSignature(STRING_WITH_TEST_CLASS_SIGNATURE)
+	.displayVersion(true)	// Optional (default is false)
+	.build();
 </pre>
 
 After that, run it as follows:
@@ -52,16 +52,16 @@ List&lt;Path> classpaths = List.of(
 
 2) In your code, type:
 <pre>
-JUnit4Runner junit4Runner = new JUnit4Runner.Builder()
-			.workingDirectory(workingDirectory)
-			.classPath(classpaths)
-			.classSignature(classSignature)
-			.build();
+JUnit4API api = new JUnit4API.Builder()
+	.workingDirectory(workingDirectory)
+	.classPath(classpaths)
+	.classSignature(classSignature)
+	.build();
 </pre>
 
 3) Call `run()` method
 <pre>
-junit4Runner.run();
+api.run();
 </pre>
 
 [Open this example](https://github.com/williamniemiec/junit4-api/blob/master/tests/api/junit4/JUnit4RunnerTest.java).
@@ -69,7 +69,7 @@ junit4Runner.run();
 
 ## 🔌 Installation
 #### Maven
-[See how to install here](https://github.com/williamniemiec/junit4-api/packages/613128)
+[See how to install here](https://github.com/williamniemiec/junit4-api/packages/613128#-installation)
 
 #### Eclipse IDE
 With your project opened, add [`junit4-api.jar`](https://github.com/williamniemiec/junit4-api/releases/) into project build path.
