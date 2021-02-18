@@ -12,6 +12,21 @@
   <description>Simple JUnit 4 API for running JUnit 4 tests in code.</description>
   <url>https://github.com/williamniemiec/junit4-api</url>
 
+  <repositories>
+    <repository>
+      <id>github</id>
+      <name>GitHub williamniemiec Apache Maven Packages</name>
+      <url>https://maven.pkg.github.com/williamniemiec/utils</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
+  
   <properties>
     <version.major>1</version.major>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
