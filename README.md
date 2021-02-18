@@ -98,38 +98,38 @@ junit4Runner.run();
 	</server>
 	```
 
-##### Example:
-```
-<?xml version="1.0" encoding="UTF-8" ?>
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
-    <activeProfiles>
-        <activeProfile>github</activeProfile>
-    </activeProfiles>
+	##### Example - `settings.xml`:
+	```
+	<?xml version="1.0" encoding="UTF-8" ?>
+	<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+		  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+	    <activeProfiles>
+		<activeProfile>github</activeProfile>
+	    </activeProfiles>
 
-    <profiles>
-        <profile>
-            <id>github</id>
-            <repositories>
-                <repository>
-                    <id>github-wniemiec-junit4-api</id>
-                    <name>GitHub williamniemiec Apache Maven Packages</name>
-                    <url>https://maven.pkg.github.com/williamniemiec/junit4-api</url>
-                </repository>
-            </repositories>
-        </profile>
-    </profiles>
+	    <profiles>
+		<profile>
+		    <id>github</id>
+		    <repositories>
+			<repository>
+			    <id>github-wniemiec-junit4-api</id>
+			    <name>GitHub williamniemiec Apache Maven Packages</name>
+			    <url>https://maven.pkg.github.com/williamniemiec/junit4-api</url>
+			</repository>
+		    </repositories>
+		</profile>
+	    </profiles>
 
-    <servers>
-        <server>
-            <id>github-wniemiec-junit4-api</id>
-            <username>williamniemiec</username>
-            <password>PKG-KEY</password>
-        </server>
-    </servers>
-</settings>
-```
+	    <servers>
+		<server>
+		    <id>github-wniemiec-junit4-api</id>
+		    <username>williamniemiec</username>
+		    <password>PKG-KEY</password>
+		</server>
+	    </servers>
+	</settings>
+	```
 
 3. Replace `PKG-KEY` with `7_0b160a3090c6d2be691f66b21dff138b3b687b0` **without underscore (`_`)**
 
