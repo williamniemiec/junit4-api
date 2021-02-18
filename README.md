@@ -22,9 +22,9 @@ In order to use this API, you need to provide the following information:
 * Test class path
 * Test class signature
 
-It is necessary to build JUnit 4 runner. Build it as follows:
+It is necessary to build JUnit 4 API. Build it as follows:
 <pre>
-JUnit4Runner junit4Runner = new JUnit4Runner.Builder()
+JUnit4API api = new JUnit4API.Builder()
 		.workingDirectory(BASE_DIRECTORY)
 		.classPath(LIST_OF_COMPILED_FILES)
 		.classSignature(STRING_WITH_TEST_CLASS_SIGNATURE)
@@ -34,7 +34,7 @@ JUnit4Runner junit4Runner = new JUnit4Runner.Builder()
 
 After that, run it as follows:
 <pre>
-junit4Runner.run();
+api.run();
 </pre>
 
 #### Example
