@@ -260,8 +260,7 @@ public class JUnit4API {
 		if (stopped)
 			return;
 		
-		output.close();
-		outputError.close();
+		closeOutput();
 		process.waitFor();
 	}
 	
@@ -271,8 +270,15 @@ public class JUnit4API {
 		
 		stopped = true;
 		process.destroyForcibly();
-		output.close();
-		outputError.close();
+		closeOutput();
+	}
+	
+	private void closeOutput() {
+		if (output != null)
+			output.close();
+			
+		if (outputError != null)
+			outputError.close();
 	}
 	
 	public boolean isRunning() {
