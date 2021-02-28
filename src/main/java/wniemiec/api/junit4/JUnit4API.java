@@ -273,7 +273,7 @@ public class JUnit4API {
 		closeOutput();
 	}
 	
-	private void closeOutput() {
+	private void closeOutput() throws IOException {
 		if (output != null)
 			output.close();
 			
