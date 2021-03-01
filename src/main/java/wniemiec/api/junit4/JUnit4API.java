@@ -1,4 +1,6 @@
 package wniemiec.api.junit4;
+
+import java.io.File;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -113,7 +115,7 @@ public class JUnit4API {
 			if (argumentFile == null) {
 				return new JUnit4API(
 						workingDirectory, 
-						StringUtils.implode(relativizeClassPaths(), ";"),
+						StringUtils.implode(relativizeClassPaths(), File.pathSeparator),
 						classSignature,
 						displayVersion
 				);
@@ -145,7 +147,7 @@ public class JUnit4API {
 		}
 
 		private void includeJavaClasspath() {
-			for (String path : System.getProperty("java.class.path").split("\\;")) {
+			for (String path : System.getProperty("java.class.path").split("\\" + File.pathSeparator)) {
 				classPath.add(Path.of(path));
 			}
 		}
