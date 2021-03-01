@@ -6,7 +6,7 @@
 
   <groupId>wniemiec.api</groupId>
   <artifactId>junit4</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 
   <name>JUnit 4 API</name>
   <description>Simple JUnit 4 API for running JUnit 4 tests in code.</description>
