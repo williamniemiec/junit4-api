@@ -46,15 +46,14 @@ If the contribution is to correct a bug, the commit should be: `bug fix # xyzw`,
 After making changes to the project, create a pull request with the project you have modified. Try to add a detailed description of what you changed from the original project. Avoid changing the structure of the project as much as possible to avoid breaking code. 
 
  <b> Attention: </b> Before making the pull request, make sure that:  
- * Generate the version jar in the following format: `junit4-api-X.Y.Z.jar`, where X, Y and Z are the numbers corresponding to the tag that will contain the changes made;  
- * Document the changes according to the [documentation standard mentioned above](#doc-standard).
+ * Generate the version jar in the following format: `junit4-api-X.Y.Z.jar`, where X, Y and Z are the numbers corresponding to the tag that will contain the changes made;
+ * Update `pom.xml` with new version;
+ * Document the changes according to the [documentation standard mentioned above](#doc-standard);
+ * Create a new [release](https://github.com/williamniemiec/junit4-api/releases) with changelog.
 
 ## <a name="development-setup"></a> Setting up development environment
 
 To work on the project, any IDE with support for JUnit 4 can be used (to execute the project tests).
-
-### <a name="output-dir"></a>Output directory
-The output directory of the project, that is, the directory where the compiled files will be placed must be `bin`, which must be at the root of the project. It is worth mentioning that this directory should not be submitted to the repository (`.gitignore` will ignore this directory).
 
 ## <a name="code-style"></a>Code style guide
 The project uses the [code style recommended by Oracle](https://www.oracle.com/java/technologies/javase/codeconventions-contents.html), with one exception: structures `if-then-else`, `try-catch-finally` and the like should not have a closed curly bracket (`}`) to the left of the keyword.
@@ -126,22 +125,26 @@ Public methods must be documented using javadoc.
 <b>Attention: </b> Documentations using javadoc must have the tag name followed by two tabs followed by its value, with the exception of the `@implSpec`, `@apiNote` and `@implNote` tags, which contain only one tab. This is done in order to maintain uniform presentation of documentation
 
 ## <a name="jar-generation"></a>Jar generation
-To generate jar file, do the following:
+In order to generate the JAR file do the following:
 
-1) Export the project
+1) On the file `pom.xml`, update:
 
-![step1](https://github.com/williamniemiec/junit4-api/blob/master/docs/img/how-to-generate-jar/step1.png?raw=true)
+* project.version
+* project.properties.version.major (if necessary)
 
-2) Select `Java` -> `JAR file`.
+2) Generate JAR file
 
-![step2](https://github.com/williamniemiec/junit4-api/blob/master/docs/img/how-to-generate-jar/step2.png?raw=true)
+* Console
+> `mvn package`
 
-3) Save the jar in `dist/X.Y/<FILENAME>`, where X and Y are the current version numbers and \<FILENAME\> is defined as follows:
-`junit4-X.Y.Z.jar`
-Where:  
-* X, Y, Z: Application version
+* Eclipse
+1) Left-click on the file `pom.xml` and select `pom.xml` -> `Run As` -> `Maven build...`
+2) In the `Goals` field, type: `package`
+3) Click on `Run`
+4) Make sure that the JAR file has been generated in the directory `dist/V.X/<FILENAME>`, where V = `project.properties.version.major` and \<FILENAME\> is:
+`executionflow-X.Y.Z.jar`
+where X, Y, Z are the version numbers of the application corresponding to `project.version`.
 
-![step3](https://github.com/williamniemiec/junit4-api/blob/master/docs/img/how-to-generate-jar/step3.png?raw=true)
 
 
 ## Appendix
